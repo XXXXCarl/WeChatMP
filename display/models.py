@@ -69,7 +69,7 @@ class Comment(models.Model):
     pre_comment = models.ForeignKey('self', on_delete=models.DO_NOTHING, null=True, verbose_name="父评论ID")
 
     def __str__(self):
-        return "来自" + author + "的评论"
+        return "来自" + str(self.author) + "的评论"
 
     class Meta:
         verbose_name_plural = "寻亲贴用户评论"
