@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from WeChatMP import settings
 
 
-# Create your models here.
+# Create your models here.1
 
 class MissingFamilyPost(models.Model):
     gender = ((1, '男'), (0, '女'))
