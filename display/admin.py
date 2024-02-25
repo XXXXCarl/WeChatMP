@@ -10,10 +10,9 @@ from .models import MissingFamilyPost, User, UserProfile, Comment, LikePost, Col
 admin.site.site_header = 'AI宝贝网站管理后台'  # 设置header
 admin.site.site_title = 'AI宝贝网站管理后台'  # 设置title
 admin.site.index_title = 'AI宝贝网站管理后台'
-
 admin.site.register(MissingFamilyPost)
 admin.site.register(User)
-admin.site.register(UserProfile)
+# admin.site.register(UserProfile)
 admin.site.register(Comment)
 admin.site.register(LikePost)
 admin.site.register(CollectPost)
@@ -53,3 +52,8 @@ class PostsVerificationAdmin(admin.ModelAdmin):
             Notification.objects.create(user=obj.user, message=message)
 
         super().save_model(request, obj, form, change)
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ['user']  # 只显示用户字段
+
